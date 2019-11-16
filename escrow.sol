@@ -39,7 +39,7 @@ contract Escrow
         product.no_units=units;
         product.date=_date;
         product.price_per_unit=p_p_u;
-        product.total=product.price_per_unit*product.no_units;//toptal amount to be paid                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        product.total=product.price_per_unit*product.no_units;//total amount to be paid                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     }
     
     function ()payable external//fallback function
@@ -53,7 +53,7 @@ contract Escrow
                     emit notify("Buyer has deposited the required amount in the Escrow account");  
     }
     
-     function escrow_balance()public view returns (uint)//returns the balance of the 
+     function escrow_balance()public view returns (uint)//returns the balance of the contract
     {
         return address(this).balance;
     }
